@@ -56,11 +56,11 @@ Het gebruik van Single-page Web apps is aan te raden voor bepaalde projecten. Ei
 ## Bronnen
 
 ### JavaScript libraries/frameworks
-Door [Smuel Andras](https://blog.hellojs.org/javascript-frameworks-why-and-when-to-use-them-43af33d0608d) op 14 februari 2017 `https://blog.hellojs.org/javascript-frameworks-why-and-when-to-use-them-43af33d0608d`
+> Door [Smuel Andras](https://blog.hellojs.org/javascript-frameworks-why-and-when-to-use-them-43af33d0608d) op 14 februari 2017 https://blog.hellojs.org/javascript-frameworks-why-and-when-to-use-them-43af33d0608d
 
-Door [Sean Fioritto](https://www.planningforaliens.com/blog/2016/06/09/when-to-use-a-js-framework) op 6 september 2016 `https://www.planningforaliens.com/blog/2016/06/09/when-to-use-a-js-framework`
+> Door [Sean Fioritto](https://www.planningforaliens.com/blog/2016/06/09/when-to-use-a-js-framework) op 6 september 2016 https://www.planningforaliens.com/blog/2016/06/09/when-to-use-a-js-framework
 
 ### Client-side single page web apps
-Door [Neoteric](https://medium.com/@NeotericEU/single-page-application-vs-multiple-page-application-2591588efe58) op 2 december 2016 `https://medium.com/@NeotericEU/single-page-application-vs-multiple-page-application-2591588efe58`
+> Door [Neoteric](https://medium.com/@NeotericEU/single-page-application-vs-multiple-page-application-2591588efe58) op 2 december 2016 https://medium.com/@NeotericEU/single-page-application-vs-multiple-page-application-2591588efe58
 
-Stevan [Tilkov](https://medium.freecodecamp.org/why-i-hate-your-single-page-app-f08bb4ff9134) op 13 januari 2016 `https://medium.freecodecamp.org/why-i-hate-your-single-page-app-f08bb4ff9134`
+> Door Stevan [Tilkov](https://medium.freecodecamp.org/why-i-hate-your-single-page-app-f08bb4ff9134) op 13 januari 2016 https://medium.freecodecamp.org/why-i-hate-your-single-page-app-f08bb4ff9134
