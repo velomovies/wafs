@@ -1,0 +1,11 @@
+section {
+    /* display: none; */
+    transition: all .3s;
+    transform: translateX(-999px);
+}
+
+section.active {
+    transition: all .3s;
+    transform: translateX(0);
+}
+
