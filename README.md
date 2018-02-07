@@ -5,14 +5,14 @@ The course repo for 'Web App From Scratch'
 
 Javascript frameworks worden veel gebruikt. Het is dan ook niet zo dat er maar één soort framework bestaat. Er zijn heel veel verschillende javascript frameworks en worden op veel uiteenlopende manieren gebruikt. Dit heeft zo zijn voordelen en nadelen. Hieronder zet ik mijn bevindingen over deze 
 
-#Wat zijn de voordelen?
+### Wat zijn de voordelen?
 Frameworks zijn tools die zorgen dat het werk sneller en beter kan maken.
 Als beginner kan het je helpen om efficiënter en makkelijker te komen tot een product.
 Er bestaat vaak grote online communities die de frameworks verbeteren.
 Het maakt Javascript overzichtelijker, omdat je minder code hoeft te schrijven.
 De Javascript is beter leesbaar.
 
-#Wat zijn de nadelen?
+### Wat zijn de nadelen?
 Frameworks zijn vaak grote bestanden die de website niet sneller maken.
 Frameworks zijn door anderen gemaakt dus je hebt niet zelf in de hand of deze wordt upgedate of dat je na een jaar in een dood ecosysteem werkt.
 Er is niet altijd een goede uitleg over hoe iets werkt.
@@ -29,12 +29,12 @@ Of je frameworks moet gebruiken ligt aan het project. Het beste is om per projec
 
 Webapps worden tegenwoordig steeds vaker gemaakt en gebruikt. Het is een webapplicatie die te vergelijken is met een computerprogramma die op de computer zelf draait. Het maken van web apps gebeurt veelal in HTML. Deze manier van het het gebruiken van een programma/website heeft zo zijn voordelen en nadelen.
 
-#Voordelen
+### Voordelen
 Bij het gebruiken van een applicatie wordt er niet veel data gebruikt.
 De resources worden maar één keer geladen. (Snel in gebruik)
 Het is makkelijker te maken. (De backend code kan hergebruikt worden)
 
-#Nadelen
+### Nadelen
 De resources worden maar één keer geladen. (lastig met updaten)
 Het eerst downloaden duurt lang.
 Minder veilig door Cross-Site Scripting (XSS)
@@ -46,14 +46,14 @@ Het gebruik van Single-page Web apps is aan te raden voor bepaalde projecten. Ei
 ## Best practices
 ...
 
-##Bronnen
+## Bronnen
 
-#JavaScript libraries/frameworks
+### JavaScript libraries/frameworks
 Door Smuel Andras op 14 februari 2017 [https://blog.hellojs.org/javascript-frameworks-why-and-when-to-use-them-43af33d0608d]
 
 Door Sean Fioritto op 6 september 2016 [https://www.planningforaliens.com/blog/2016/06/09/when-to-use-a-js-framework]
 
-#client-side single page web apps
+### Client-side single page web apps
 Door Neoteric op 2 december 2016 [https://medium.com/@NeotericEU/single-page-application-vs-multiple-page-application-2591588efe58]
 
 Stevan Tilkov op 13 januari 2016 [https://medium.freecodecamp.org/why-i-hate-your-single-page-app-f08bb4ff9134] 
