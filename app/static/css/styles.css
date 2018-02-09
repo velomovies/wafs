@@ -21,10 +21,35 @@ li {
 }
 
 a {
-    padding: 0 .2em;
+    text-align: center;
+    position: relative;
     text-decoration: none;
     color: black;
-    width: auto;
+    width: 100%;
+}
+
+a:after {
+    content: '';
+    width: 0;
+    height: .2em;
+    position: absolute;
+    top: 0;
+    background: #5296A5;
+    display: block;
+    transition: .2s ease-in-out; 
+}
+
+a:first-of-type:after {
+    right: 0;
+}
+
+a:last-of-type:after {
+    left: 0
+}
+
+a:hover:after,
+a.active:after {
+    width: 100%; 
 }
 
 section {
