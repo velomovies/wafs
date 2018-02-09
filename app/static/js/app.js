@@ -12,16 +12,18 @@
                 if (hash) {
                     routes.pushState(hash)
                 } else {
-                    sections.toggle('#start')
+                  //zet de beginwaarde niet hadnmatig maar zoek je eerste sections
+                  var toggleElement = '#' + document.querySelectorAll('section')[0].id
+                    sections.toggle(toggleElement)
                 }
             })
-        }    
+        }
     }
 
     var routes = {
         init: function () {
             this.handleEvents()
-        }, 
+        },
         handleEvents: function () {
             var self = this
             window.addEventListener('hashchange', function (event) {
@@ -36,10 +38,14 @@
 
     var sections = {
         toggle: function (route) {
-            document.querySelectorAll('section').forEach(function (el) {
-                el.classList.remove('active')
-            })
+            this.turnOff(document.querySelectorAll('section'))
             document.querySelector(route).classList.add('active')
+        },
+        //een turnoff methode om meer overzicht te krijgen, deze methode kan je later ook weer hergebruiken.
+        turnOff: function(elements){
+          elements.forEach(function (el) {
+              el.classList.remove('active')
+          })
         }
     }
 
