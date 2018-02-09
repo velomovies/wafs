@@ -1,7 +1,8 @@
 section {
     /* display: none; */
     transition: all .3s;
-    transform: translateX(-999px);
+    /* translateZ toggles GPU for rendering (smoother animation) */
+    transform: translateX(-999px) translateZ(0);
 }
 
 section.active {
