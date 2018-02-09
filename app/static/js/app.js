@@ -39,10 +39,7 @@
             var sections = document.querySelectorAll('section')
             var current = document.querySelector(route)
             sections.forEach(function (el) {
-                el.classList.remove('active')
-                if (el === current) {
-                    el.classList.add('active')
-                }
+                el === current ? el.classList.add('active') : el.classList.remove('active')
             })
         }
     }
