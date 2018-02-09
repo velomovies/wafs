@@ -36,7 +36,8 @@
 
     var sections = {
         toggle: function (route) {
-            document.querySelectorAll('section').forEach(function (el) {
+            var sections = document.querySelectorAll('section')
+            sections.forEach(function (el) {
                 el.classList.remove('active')
             })
             document.querySelector(route).classList.add('active')
