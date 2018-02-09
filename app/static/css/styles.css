@@ -34,7 +34,7 @@ a:after {
     height: .2em;
     position: absolute;
     top: 0;
-    background: #5296A5;
+    background: #5296A544;
     display: block;
     transition: .2s ease-in-out; 
 }
@@ -50,6 +50,11 @@ a:last-of-type:after {
 a:hover:after,
 a.active:after {
     width: 100%; 
+}
+
+a.active:after {
+    width: 100%;
+    background: #5296A5;
 }
 
 section {
