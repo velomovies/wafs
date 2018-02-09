@@ -64,3 +64,7 @@ Het gebruik van Single-page Web apps is aan te raden voor bepaalde projecten. Ei
 > Door [Neoteric](https://medium.com/@NeotericEU/single-page-application-vs-multiple-page-application-2591588efe58) op 2 december 2016 https://medium.com/@NeotericEU/single-page-application-vs-multiple-page-application-2591588efe58
 
 > Door Stevan [Tilkov](https://medium.freecodecamp.org/why-i-hate-your-single-page-app-f08bb4ff9134) op 13 januari 2016 https://medium.freecodecamp.org/why-i-hate-your-single-page-app-f08bb4ff9134
+
+# Pull Requests
+
+> Pull request bij [Jelle Overbeek](https://github.com/jelleoverbeek/wafs/pull/1)
