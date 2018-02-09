@@ -1,11 +1,25 @@
+body {
+    margin: 0;
+}
+
 section {
-    /* display: none; */
     transition: all .3s;
     transform: translateX(-999px);
+    visibility: hidden;
 }
 
 section.active {
+    visibility: visible;
     transition: all .3s;
     transform: translateX(0);
+}
+
+nav ul {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(5em, 1fr));
+}
+
+li {
+    list-style: none;
 }
 
