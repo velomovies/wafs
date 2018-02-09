@@ -37,10 +37,13 @@
     var sections = {
         toggle: function (route) {
             var sections = document.querySelectorAll('section')
+            var current = document.querySelector(route)
             sections.forEach(function (el) {
                 el.classList.remove('active')
+                if (el === current) {
+                    el.classList.add('active')
+                }
             })
-            document.querySelector(route).classList.add('active')
         }
     }
 
