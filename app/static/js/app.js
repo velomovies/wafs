@@ -1,6 +1,15 @@
 (function () {
     "use strict"
 
+    var helper = {
+        qs: function (el) {
+            return document.querySelector(el)
+        },
+        qsa: function (el) {
+            return document.querySelectorAll(el)
+        }
+    }
+
     var app = {
         init: function () {
             this.handleEvents()
@@ -36,10 +45,10 @@
 
     var sections = {
         toggle: function (route) {
-            document.querySelectorAll('section').forEach(function (el) {
+            helper.qsa('section').forEach(function (el) {
                 el.classList.remove('active')
             })
-            document.querySelector(route).classList.add('active')
+            helper.qs(route).classList.add('active')
         }
     }
 
