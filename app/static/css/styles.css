@@ -1,6 +1,8 @@
 :root {
+    --main-black: #000000;
     --main-gray: #ededed;
     --main-white: #ffffff;
+    --main-black-trans: #00000044;
 }
 
 body {
@@ -22,13 +24,7 @@ a {
     padding: 0 .2em;
     text-decoration: none;
     color: black;
-}
-
-a:before {
-    content: '';
-    background-color: green;
-    height: 10px;
-    width: 10px;
+    width: auto;
 }
 
 section {
@@ -48,19 +44,19 @@ nav {
     position: absolute;
     bottom: 0;
     width: 100%;    
-    background-color: var(--main-gray);
+    box-shadow: .1em .1em 1em var(--main-black-trans);
 }
 
 nav ul {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(5em, 1fr));
     justify-items: center;
-    grid-gap: 1em;
     background-color: var(--main-white);
 }
 
 nav ul li {
     padding: 1em;
     background: var(--main-white);
+
 }
 
