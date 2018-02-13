@@ -1,44 +1,55 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<head>
+  <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="static/css/styles.css">
     <title>App</title>
-</head>
+  </head>
 
-<body>
+  <body>
     <main>
-        <section id="start">
-            <h1>Home</h1>
-        </section>
+      <section id="home">
+        <h1 data-bind="name"></h1>
+        <p data-bind="about"></p>
+        <p data-bind="info"></p>
+      </section>
 
-        <section id="best-practices">
-            <h1>Best Practices</h1>
-            <ul>
-                <li>Don't use global variables/objects</li>
-                <li>Declare variables at top of scope</li>
-                <li>Use short clear meaningful names (English)</li>
-                <li>Work in strict mode</li>
-                <li>camelCase your code if(code != Constructor || CONSTANTS)</li>
-                <li>Place external scripts at the bottom of the page</li>
-                <li>Indent your code</li>
-                <li>Commit often, push once</li>
-            </ul>
-        </section>
+      <section id="werken">
+        <h1>Rembrandt</h1>
+        <article><a href="#detail"><img src="#" alt="Rembrandt header"></a></article>
+        <article><img src="#" alt="Rembrandt header"></article>
+        <article><img src="#" alt="Rembrandt header"></article>
+      </section>
+
+      <section id="detail">
+        <a href="#werken"><h1>Detail</h1></a>
+        <img src="#" alt="Detail pagina">
+        <article></article>
+      </section>
+
+      <section id="error">
+        <h1>Error!</h1>
+        <p>Deze pagina bestaat niet...</p>
+      </section>
 
     </main>
 
     <nav>
-        <ul>
-            <a href="#start" class="active"><li>Home</li></a>
-            <a href="#best-practices"><li>Best Practices</li></a>
-        </ul>
+      <ul>
+        <a href="#home">
+          <li>Rembrandt van rijn</li>
+        </a>
+        <a href="#werken">
+          <li>Zijn werken</li>
+        </a>
+      </ul>
     </nav>
-</body>
-
-<script src="static/js/app.js"></script>
+  </body>
+  <script src="static/js/transparency.min.js"></script>
+  <script src="static/js/routie.js"></script>
+  <script src="static/js/app.js"></script>
 
 </html>
