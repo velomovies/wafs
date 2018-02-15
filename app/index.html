@@ -5,6 +5,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="static/js/config.js"></script>
+    <script src="static/js/transparency.min.js"></script>
+    <script src="static/js/routie.js"></script>
     <link rel="stylesheet" href="static/css/styles.css">
     <title>App</title>
   </head>
@@ -18,16 +21,21 @@
       </section>
 
       <section id="werken">
-        <h1>Rembrandt</h1>
-        <article><a href="#detail"><img src="#" alt="Rembrandt header"></a></article>
-        <article><img src="#" alt="Rembrandt header"></article>
-        <article><img src="#" alt="Rembrandt header"></article>
+        <h1 data-bind="title"></h1>
+        <a data-bind="link" href="#detail">
+          <article>
+            <p data-bind="works"></p>
+            <img data-bind="image" src="#" alt="Rembrandt header">
+          </article>
+        </a>
       </section>
 
       <section id="detail">
-        <a href="#werken"><h1>Detail</h1></a>
-        <img src="#" alt="Detail pagina">
-        <article></article>
+        <a href="#werken"><h1 data-bind="title"></h1></a>
+        <img data-bind="image" src="#" alt="Detail pagina">
+        <article>
+          <p></p>
+        </article>
       </section>
 
       <section id="error">
@@ -48,8 +56,7 @@
       </ul>
     </nav>
   </body>
-  <script src="static/js/transparency.min.js"></script>
-  <script src="static/js/routie.js"></script>
+
   <script src="static/js/app.js"></script>
 
 </html>
