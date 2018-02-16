@@ -98,7 +98,9 @@
       helper.turnOff(activeElements)
       activeLinkElements.length > 0 && activeLinkElements[0].classList.add('active')
       sectionElements.classList.remove('hidden')
-      sectionElements.classList.add('active')
+      window.setTimeout(function () {
+        sectionElements.classList.add('active')
+      }, 1);
     }
   }
 

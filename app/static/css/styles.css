@@ -28,6 +28,10 @@ img {
   width: 100%;
 }
 
+.hidden {
+  display: none;
+}
+
 /* NAV */
 
 nav {
@@ -100,9 +104,5 @@ nav ul li {
 }
 
 nav.active {
-  display: none;
-}
-
-.hidden {
   display: none;
 }
