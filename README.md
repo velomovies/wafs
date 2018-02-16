@@ -67,6 +67,8 @@ Het gebruik van Single-page Web apps is aan te raden voor bepaalde projecten. Ei
 
 # Pull Requests
 
-> Pull request bij [Jelle Overbeek](https://github.com/jelleoverbeek/wafs/pull/1)
+> Pull request (week 1) bij [Jelle Overbeek](https://github.com/jelleoverbeek/wafs/pull/1)
 
-> Pull request bij [Koos Bavinck](https://github.com/hackshackshacks/wafs/pull/2)
+> Pull request (week 1) bij [Koos Bavinck](https://github.com/hackshackshacks/wafs/pull/2)
+
+> Pull request (week 2) bij [Vienna Meijer](https://github.com/ViennaM/wafs/pull/2)
