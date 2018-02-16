@@ -7,6 +7,8 @@
   --highlight-trans: #5296A544;
 }
 
+/* GENERAL */
+
 body {
   margin: 0;
   background-color: var(--main-gray);
@@ -21,6 +23,12 @@ li {
   list-style: none;
   padding: 0;
 }
+
+img {
+  width: 100%;
+}
+
+/* NAV */
 
 nav {
   position: fixed;
