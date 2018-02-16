@@ -102,7 +102,3 @@ nav ul li {
 nav.active {
   display: none;
 }
-
-.hidden {
-  display: none;
-}

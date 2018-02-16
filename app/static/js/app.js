@@ -91,13 +91,12 @@
   var sections = {
     // Toggles the right section and adds active states
     toggle: function (route) {
-      var activeElements = helper.qsa('.active'),
-          activeLinkElements = helper.qsa('nav [href="' + route + '"]'),
-          sectionElements = helper.qs(route)
+      var activeElements = helper.qsa('.active')
+      var activeLinkElements = helper.qsa('nav [href="' + route + '"]')
+      var sectionElements = helper.qs(route)
       // Turns active links off and adds the right active state
       helper.turnOff(activeElements)
       activeLinkElements.length > 0 && activeLinkElements[0].classList.add('active')
-      sectionElements.classList.remove('hidden')
       sectionElements.classList.add('active')
     }
   }
@@ -156,11 +155,6 @@
     turnOff: function (elements) {
       elements.forEach(function (el) {
         el.classList.remove('active')
-        if (el.nodeName === "SECTION") {
-            window.setTimeout(function () {
-                el.classList.add('hidden')
-            }, 300);
-        }
       })
     },
     qs: function (el) {
