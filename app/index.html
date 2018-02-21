@@ -13,48 +13,67 @@
   </head>
 
   <body>
+    
     <main>
       <section id="home">
         <h1 data-bind="name"></h1>
-        <p data-bind="about"></p>
-        <p data-bind="info"></p>
+        <article data-bind="info"></article>
       </section>
 
       <section id="werken">
-        <h1 data-bind="title"></h1>
         <a data-bind="link" href="#detail">
-          <article>
-            <p data-bind="works"></p>
-            <img data-bind="image" src="#" alt="Rembrandt header">
-          </article>
+          <h1 data-bind="title"></h1>
+          <img class="smallImage" data-bind="image" src="#" alt="Rembrandt header">
         </a>
       </section>
 
       <section id="detail">
-        <a href="#werken"><h1 data-bind="title"></h1></a>
-        <img data-bind="image" src="#" alt="Detail pagina">
-        <article>
-          <p></p>
+        <h1 data-bind="title"></h1>
+        <a data-bind="link" href="#"><img data-bind="image" src="#" alt="Schilderij"></a>
+        <p data-bind="description"></p>
+        <article data-bind="info">
         </article>
+      </section>
+
+      <section id="image">
+        <img data-bind="image" src="#" alt="Schilderij">
       </section>
 
       <section id="error">
         <h1>Error!</h1>
-        <p>Deze pagina bestaat niet...</p>
+        <p>Er is iets misgegaan...</p>
       </section>
 
     </main>
 
     <nav>
-      <ul>
-        <a href="#home">
-          <li>Rembrandt van rijn</li>
-        </a>
-        <a href="#werken">
-          <li>Zijn werken</li>
-        </a>
-      </ul>
+      <div class="nav">
+        <ul>
+          <a href="#home">
+            <li>Kunstenaar</li>
+          </a>
+          <a href="#werken">
+            <li>Zijn werken</li>
+          </a>
+        </ul>
+      </div>
     </nav>
+    <aside>
+        <svg width="1em" height="2.1em">
+            <circle cx=".5em" cy=".5em" r=".20em"/>
+            <circle cx=".5em" cy="1.10em" r=".20em"/>
+            <circle cx=".5em" cy="1.70em" r=".20em"/>
+          </svg>
+          <article>
+            <ul class="userSettings">
+              <li>Rembrandt van Rijn</li>
+              <li>Iets</li>
+              <li>Iets</li>
+            </ul>
+          </article>
+      </aside>
+
+
   </body>
 
   <script src="static/js/app.js"></script>
