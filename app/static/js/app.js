@@ -20,7 +20,7 @@
         'home': function () {
           // Toggles section and gets data from api. Parameter for the right data endpoint
           sections.toggle('#home')
-          api.getData('/pages' + api.language + '/rijksstudio/kunstenaars/' + api.artistInfo() + '?')
+          api.getData('/pages' + config.language + '/rijksstudio/kunstenaars/' + config.artistInfo() + '?')
           .then(function (data) {
             // Renders the right data with a few parameters to show the right content
             template.render(data, '#home', template.home)
@@ -31,7 +31,7 @@
         },
         'art': function () {
           sections.toggle('#art')
-          api.getData(api.language + '/collection/?principalMaker=' + api.artistCollection() + '&ps=' + api.results + '&p=' + api.page + '&')
+          api.getData(config.language + '/collection/?principalMaker=' + config.artistCollection() + '&ps=' + config.results + '&p=' + config.page + '&')
           .then(function (data) {
             template.render(data, '#art', template.art)
           })
@@ -44,7 +44,7 @@
         },
         'detail/:id': function (id) {
           sections.toggle('#detail')
-          api.getData(api.language + '/collection/' + id + '?')
+          api.getData(config.language + '/collection/' + id + '?')
           .then(function (data) {
             template.render(data, '#detail', template.detail)
           })
@@ -54,7 +54,7 @@
         },
         'detail/image/:id': function (id) {
           sections.toggle('#image')
-          api.getData(api.language + '/collection/' + id + '?')
+          api.getData(config.language + '/collection/' + id + '?')
           .then(function (data) {
             template.render(data, '#image', template.image)
           })
@@ -81,32 +81,10 @@
   }
 
   var api = {
-    // A config for showing the right data
-    url: 'https://www.rijksmuseum.nl/api',
-    format: 'json',
-    artistCollection: function () {
-      if (localStorage.getItem('artistCollection')) {
-        return localStorage.getItem('artistCollection')
-      } else {
-        return 'Rembrandt+van+Rijn' 
-      }
-    },
-    artistInfo: function () {
-      if (localStorage.getItem('artistInfo')) {
-        return localStorage.getItem('artistInfo')
-      } else {
-        return 'rembrandt-van-rijn' 
-      }
-    },
-    results: 100,
-    page: 1,
-    language: '/nl',
-    refresh: true,
-
     // Gets data from api with an url that is specified above and in the route
     getData: function (dataEndpoint) {
       // Uncomment if nothing has to be stored
-      localStorage.clear()
+      // localStorage.clear()
       return new Promise(function (resolve, reject) {
         if (localStorage.getItem(dataEndpoint)) {
           var data = JSON.parse(localStorage.getItem(dataEndpoint))
@@ -124,8 +102,8 @@
     requestData: function (resolve, reject, dataEndpoint) {
       var request = new XMLHttpRequest()
       
-      request.open('GET', api.url + dataEndpoint + 'key=' + config.key + '&format=' + api.format, true)
-      console.log(api.url + dataEndpoint + 'key=' + config.key + '&format=' + api.format)
+      request.open('GET', config.url + dataEndpoint + 'key=' + config.key + '&format=' + config.format, true)
+
       request.onload = function () {
         if (request.status >= 200 && request.status < 400) {
           // Gets data and resolves and rejects if error
@@ -159,12 +137,12 @@
     hideSection: function (elements) {
       elements.forEach(function (element) {
         element.classList.remove('active')
-        if (element.nodeName === 'SECTION' && api.refresh) {
+        if (element.nodeName === 'SECTION' && config.refresh) {
           window.setTimeout(function () {
               element.classList.add('hidden')
           }, 300);
         }
-        api.refresh = true
+        config.refresh = true
       })
     },
     showSection: function (link, element) {
@@ -250,6 +228,30 @@
     }
   }
   
+  var config = {
+    key: 'fakeKey',
+    url: 'https://www.rijksmuseum.nl/api',
+    format: 'json',
+    artistCollection: function () {
+      if (localStorage.getItem('artistCollection')) {
+        return localStorage.getItem('artistCollection')
+      } else {
+        return 'Rembrandt+van+Rijn' 
+      }
+    },
+    artistInfo: function () {
+      if (localStorage.getItem('artistInfo')) {
+        return localStorage.getItem('artistInfo')
+      } else {
+        return 'rembrandt-van-rijn' 
+      }
+    },
+    results: 100,
+    page: 1,
+    language: '/nl',
+    refresh: true
+  }
+
   var utils = {
     onScroll: function () {
       var lastScrollTop = 0
@@ -286,7 +288,7 @@
       })
     },
     selectArtist: function () {
-      api.getData('/pages' + api.language + '/rijksstudio/kunstenaars/?')
+      api.getData('/pages' + config.language + '/rijksstudio/kunstenaars/?')
       .then(function (data) {
         // Renders the right data with a few parameters to show the right content
           template.render(data, '#selectArtist', template.selectArtist)
@@ -302,7 +304,7 @@
             localStorage.setItem('artistCollection', namePlus)
             localStorage.setItem('artistInfo', nameArtistInfo)
             if(location.hash == '#home') {
-              api.refresh = false
+              config.refresh = false
             }
             routie('refresh')
           })

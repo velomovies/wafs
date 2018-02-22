@@ -8,7 +8,14 @@ In this repo you can find the app I made from scratch. The app is based on a api
 
 ## Background
 
-The app shows arts from the Rijksmuseum. 
+The app shows arts from the Rijksmuseum. It is designed mobile first and works on a lot of devices. In the app you can choose an artist. The artist is remembered by the app. When you refresh it saved your choice. When you visit it for the first time it shows Rembrandt van Rijn. 
+
+On the homepage you find the backstory of any artist. On the section `werken` you can find all the art pieces of a certain artist. When you click on an art piece you can see more info about that piece. Next to that you can see the details of art piece by clicking on the image itself. 
+
+This ensures you can go trough a big part of the Rijksmuseum API.
+
+![Preview image](app/static/images/mobile.png)
+> The app is mobile first
 
 ## Diagram
 
@@ -29,13 +36,13 @@ The app uses the api of [`Rijksmuseum`](https://www.rijksmuseum.nl/nl/api). The 
 Because the api recently updated, the data that returned was really clean. I easily could change the api call and use a lot of parameters to get the data I wanted.
 
 The queries I used where:
-`` 
+```
 https://www.rijksmuseum.nl/api/pages/nl/rijksstudio/kunstenaars/rembrandt-van-rijn?key=rS2jUIgJ&format=json
 
 https://www.rijksmuseum.nl/api/nl/collection/?principalMaker=Rembrandt+van+Rijn&ps=100&p=1&key=rS2jUIgJ&format=json
 
 https://www.rijksmuseum.nl/api/nl/collection/SK-A-4050?key=rS2jUIgJ&format=json
-``
+```
 
 The name of the artist may vary by your own choice
 
@@ -45,6 +52,7 @@ Most of the features I wanted in this app I implemented succesfully. Below is a 
 * Search function to search a artist and see their art pieces
 * A way to select art pieces from a specific date
 * Show a image per artist in the home section
+* A slick design
 
 # Assignment (in dutch)
 
