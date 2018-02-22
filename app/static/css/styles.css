@@ -132,7 +132,7 @@ section {
   background: var(--main-white);
   box-shadow: .1em .1em 1em var(--main-black-trans);
   transition: transform .3s;
-  transform: translateX(-100vw) translateZ(0);
+  transform: translateX(-150%) translateZ(0);
 }
 
 section#image {
@@ -160,7 +160,7 @@ section a h1,
 section a img {
   grid-column: 1 / -1;
   grid-row: 1 / -1;
-  color: #ffffff;
+  color: var(--main-white);
   transition: all .3s;
 }
 
@@ -170,9 +170,12 @@ section a h1 {
 }
 
 @media (max-width: 25em) {
-  section:not(#image) img {
+  section#werken img {
     height: 100%;
   }
+}
+
+@media (max-width: 40em) {
   section a h1 {
     transform: translateY(0);
   }

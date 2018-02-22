@@ -20,7 +20,7 @@
         <article data-bind="info"></article>
       </section>
 
-      <section id="werken">
+      <section id="art">
         <a data-bind="link" href="#detail">
           <h1 data-bind="title"></h1>
           <img class="smallImage" data-bind="image" src="#" alt="Rembrandt header">
@@ -52,8 +52,8 @@
           <a href="#home">
             <li>Kunstenaar</li>
           </a>
-          <a href="#werken">
-            <li>Zijn werken</li>
+          <a href="#art">
+            <li>Kunstwerken</li>
           </a>
         </ul>
       </div>
@@ -65,10 +65,8 @@
             <circle cx=".5em" cy="1.70em" r=".20em"/>
           </svg>
           <article>
-            <ul class="userSettings">
-              <li>Rembrandt van Rijn</li>
-              <li>Iets</li>
-              <li>Iets</li>
+            <ul class="selectArtist" id="selectArtist">
+              <li data-bind="artistName"></li>
             </ul>
           </article>
       </aside>
