@@ -106,7 +106,7 @@
     // Gets data from api with an url that is specified above and in the route
     getData: function (dataEndpoint) {
       // Uncomment if nothing has to be stored
-      // localStorage.clear()
+      localStorage.clear()
       return new Promise(function (resolve, reject) {
         if (localStorage.getItem(dataEndpoint)) {
           var data = JSON.parse(localStorage.getItem(dataEndpoint))
@@ -125,7 +125,7 @@
       var request = new XMLHttpRequest()
       
       request.open('GET', api.url + dataEndpoint + 'key=' + config.key + '&format=' + api.format, true)
-
+      console.log(api.url + dataEndpoint + 'key=' + config.key + '&format=' + api.format)
       request.onload = function () {
         if (request.status >= 200 && request.status < 400) {
           // Gets data and resolves and rejects if error
