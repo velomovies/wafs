@@ -27,7 +27,7 @@ Below is a image of the Actor diagram for my app. Based on the first iteration o
 Basd on the Actor diagram and my code I made an Interaction diagram. You can see in one glance how the app is built.
 
 ![Interaction](app/static/images/interactiondiagram.png)
-> Actor diagram made in illustrator
+> Interaction diagram made in illustrator
 
 ## Data
 

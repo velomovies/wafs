@@ -1,6 +1,6 @@
-import router from './router.js'
 import config from './config.js'
 import api from './api.js'
+import template from './template.js'
 
 var utils = {
   // This is a function on one page. It gives an effect when you scroll on the page
@@ -68,11 +68,9 @@ var utils = {
   },
   // A quick way to show and hide the loader
   deleteLoader: function () {
-    console.log('delete')
     document.querySelector('.loader').classList.add('hidden')
   },
   addLoader: function () {
-    console.log('add')
     document.querySelector('.loader').classList.remove('hidden')
   }
 }

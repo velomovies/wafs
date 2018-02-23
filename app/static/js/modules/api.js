@@ -1,5 +1,4 @@
 import config from './config.js'
-import router from './router.js'
 import utils from './utils.js'
 
 var api = {
