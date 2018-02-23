@@ -2,6 +2,9 @@
 // &
 // Uses transparancy by Leonidas (http://leonidas.github.com/transparency/) for templating
 
+// import utils from './modules/utils.js'
+// import router from './modules/router.js'
+
 (function () {
   "use strict"
 
@@ -25,28 +28,41 @@
             // Renders the right data with a few parameters to show the right content
             template.render(data, '#home', template.home)
           })
+          .then(function () {
+            // Delete loader when all data is loaded 
+            utils.deleteLoader()
+          })
           .catch(function () {
+            //When there is an error somewhere in the promise, render the error page
             routie('error')
           })
         },
         'art': function () {
-          sections.toggle('#art')
           api.getData(config.language + '/collection/?principalMaker=' + config.artistCollection() + '&ps=' + config.results + '&p=' + config.page + '&')
           .then(function (data) {
             template.render(data, '#art', template.art)
           })
           .then(function () {
+            sections.toggle('#art')
+          })
+          .then(function () {
             utils.onScroll()
+            utils.deleteLoader()
           })
           .catch(function () {
             routie('error')
           })
         },
         'detail/:id': function (id) {
-          sections.toggle('#detail')
           api.getData(config.language + '/collection/' + id + '?')
           .then(function (data) {
             template.render(data, '#detail', template.detail)
+          })
+          .then(function () {
+            sections.toggle('#detail')
+          })
+          .then(function () {
+            utils.deleteLoader()
           })
           .catch(function () {
             routie('error')
@@ -58,10 +74,14 @@
           .then(function (data) {
             template.render(data, '#image', template.image)
           })
+          .then(function () {
+            utils.deleteLoader()
+          })
           .catch(function () {
             routie('error')
           })
         },
+        // renders the error page
         'error': function () {
           sections.toggle('#error')
         },
@@ -83,9 +103,11 @@
   var api = {
     // Gets data from api with an url that is specified above and in the route
     getData: function (dataEndpoint) {
+      utils.addLoader()
       // Uncomment if nothing has to be stored
       // localStorage.clear()
       return new Promise(function (resolve, reject) {
+        // When the user has info in the localStorage it gets the data from the localStorage
         if (localStorage.getItem(dataEndpoint)) {
           var data = JSON.parse(localStorage.getItem(dataEndpoint))
           if (data) {
@@ -95,18 +117,20 @@
           }
 
         } else {
+          // When there is no localStorage and the user has not been at the website before it request the data from the api
           api.requestData(resolve, reject, dataEndpoint)
         }
       })
     },
     requestData: function (resolve, reject, dataEndpoint) {
+      // This starts a HTTP request which gived us the right data from the right url. The url is build from a few parameters
       var request = new XMLHttpRequest()
       
       request.open('GET', config.url + dataEndpoint + 'key=' + config.key + '&format=' + config.format, true)
 
       request.onload = function () {
         if (request.status >= 200 && request.status < 400) {
-          // Gets data and resolves and rejects if error
+          // Gets data and resolves and rejects if error. It puts the data in localStorage so that it can be used later
           var data = JSON.parse(request.responseText)
           localStorage.setItem(dataEndpoint, JSON.stringify(data))
           return resolve(data)
@@ -228,31 +252,8 @@
     }
   }
   
-  var config = {
-    key: 'fakeKey',
-    url: 'https://www.rijksmuseum.nl/api',
-    format: 'json',
-    artistCollection: function () {
-      if (localStorage.getItem('artistCollection')) {
-        return localStorage.getItem('artistCollection')
-      } else {
-        return 'Rembrandt+van+Rijn' 
-      }
-    },
-    artistInfo: function () {
-      if (localStorage.getItem('artistInfo')) {
-        return localStorage.getItem('artistInfo')
-      } else {
-        return 'rembrandt-van-rijn' 
-      }
-    },
-    results: 100,
-    page: 1,
-    language: '/nl',
-    refresh: true
-  }
-
   var utils = {
+    // This is a function on one page. It gives an effect when you scroll on the page
     onScroll: function () {
       var lastScrollTop = 0
       var smallImages = document.querySelectorAll('.smallImage')
@@ -281,6 +282,7 @@
         lastScrollTop = st;
       })
     },
+    // This makes sure the button to select an artist works
     showSettings: function () {
       this.selectArtist()
       document.querySelector('aside svg').addEventListener('click', function () {
@@ -291,7 +293,7 @@
       api.getData('/pages' + config.language + '/rijksstudio/kunstenaars/?')
       .then(function (data) {
         // Renders the right data with a few parameters to show the right content
-          template.render(data, '#selectArtist', template.selectArtist)
+        template.render(data, '#selectArtist', template.selectArtist)
       })
       .then(function () {
         document.querySelectorAll('.selectArtist li').forEach(function (element) {
@@ -313,7 +315,41 @@
       .catch(function () {
         routie('error')
       })
+    },
+    // A quick way to show and hide the loader
+    deleteLoader: function () {
+      console.log('delete')
+      document.querySelector('.loader').classList.add('hidden')
+    },
+    addLoader: function () {
+      console.log('add')
+      document.querySelector('.loader').classList.remove('hidden')
     }
+  }
+
+  var config = {
+    // Here you find a few settings that could be usefull for the user
+    key: 'fakeKey',
+    url: 'https://www.rijksmuseum.nl/api',
+    format: 'json',
+    artistCollection: function () {
+      if (localStorage.getItem('artistCollection')) {
+        return localStorage.getItem('artistCollection')
+      } else {
+        return 'Rembrandt+van+Rijn' 
+      }
+    },
+    artistInfo: function () {
+      if (localStorage.getItem('artistInfo')) {
+        return localStorage.getItem('artistInfo')
+      } else {
+        return 'rembrandt-van-rijn' 
+      }
+    },
+    results: 100,
+    page: 1,
+    language: '/nl',
+    refresh: true
   }
 
   app.init()

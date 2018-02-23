@@ -29,6 +29,13 @@ li {
   padding: 0;
 }
 
+img {
+  background: url(../images/loader.gif);
+  background-size: 2em;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
 .hidden {
   display: none;
 }
@@ -210,7 +217,7 @@ aside {
   fill: var(--highlight);
   border-radius: .5em;
   position: fixed;
-  z-index: 999;
+  z-index: 99;
   right: .5em;
   top: .5em;
   transition: all .3s;
@@ -250,5 +257,29 @@ aside article.active {
   background: var(--main-white);
 }
 
+/* Loader */
+
+.loader {
+  position: fixed;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%);
+  width: 4em; 
+  height: 4em;
+  background: url(../images/loader.gif);
+  background-size: 3em;
+  background-repeat: no-repeat;
+  background-position: center;
+  text-indent: 200%;
+  white-space: nowrap;
+  overflow: hidden;
+  z-index: 999;
+}
+
+@keyframes loader {
+  to { 
+     background-position: -18em 0; 
+  }
+}
 
 

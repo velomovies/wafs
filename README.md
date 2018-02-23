@@ -111,6 +111,11 @@ Het gebruik van Single-page Web apps is aan te raden voor bepaalde projecten. Ei
 
 > Door Stevan [Tilkov](https://medium.freecodecamp.org/why-i-hate-your-single-page-app-f08bb4ff9134) op 13 januari 2016 https://medium.freecodecamp.org/why-i-hate-your-single-page-app-f08bb4ff9134
 
+### Libraries
+> Transparency [Leonidas](https://github.com/leonidas/transparency) (for templating)
+
+> Routie [Jgallen](https://github.com/jgallen23/routie) (for routing on hash change)
+
 ## Pull Requests
 
 > Pull request (week 1) bij [Jelle Overbeek](https://github.com/jelleoverbeek/wafs/pull/1)

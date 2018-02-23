@@ -5,9 +5,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <script src="static/js/config.js"></script>
-    <script src="static/js/transparency.min.js"></script>
-    <script src="static/js/routie.js"></script>
     <link rel="stylesheet" href="static/css/styles.css">
     <title>App</title>
   </head>
@@ -20,16 +17,17 @@
         <article data-bind="info"></article>
       </section>
 
-      <section id="art">
+      <section id="art">   
         <a data-bind="link" href="#detail">
           <h1 data-bind="title"></h1>
-          <img class="smallImage" data-bind="image" src="" alt="">
+          <img class="smallImage" data-bind="image" src="">
         </a>
+
       </section>
 
       <section id="detail">
         <h1 data-bind="title"></h1>
-        <a data-bind="link" href="#"><img data-bind="image" src="#" alt="Schilderij"></a>
+        <a data-bind="link" href="#"><img data-bind="image" src=""></a>
         <p data-bind="description"></p>
         <article data-bind="info">
         </article>
@@ -44,6 +42,7 @@
         <p>Er is iets misgegaan...</p>
       </section>
 
+      <div class="loader hidden">loading...</div>
     </main>
 
     <nav>
@@ -74,6 +73,11 @@
 
   </body>
 
+  <!-- Libraries -->
+  <script src="static/js/transparency.min.js"></script>
+  <script src="static/js/routie.js"></script>
+
+  <!-- APP -->
   <script src="static/js/app.js"></script>
 
 </html>
