@@ -48,6 +48,12 @@ The name of the artist may vary by your own choice
 
 ## Features
 
+I implemented a few features:
+* Choose the artist you want to view the art from
+* See details of the art pieces
+* A zoomed-in picture of the art piece
+
+### Wishlist
 Most of the features I wanted in this app I implemented succesfully. Below is a little list of some features I would like to have.
 * Search function to search a artist and see their art pieces
 * A way to select art pieces from a specific date

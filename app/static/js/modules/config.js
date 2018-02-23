@@ -1,6 +1,6 @@
 import api from './api.js'
 
-var config = {
+const config = {
   // Here you find a few settings that could be usefull for the user
   key: 'rS2jUIgJ',
   url: 'https://www.rijksmuseum.nl/api',

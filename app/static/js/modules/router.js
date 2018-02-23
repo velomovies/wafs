@@ -4,14 +4,14 @@ import api from './api.js'
 import template from './template.js'
 import utils from './utils.js'
 
-var router = {
+const router = {
   init: function () { 
     // Checks with routie which section it has to show
     routie({
       'home': function () {
         // Toggles section and gets data from api. Parameter for the right data endpoint
         sections.toggle('#home')
-        api.getData('/pages' + config.language + '/rijksstudio/kunstenaars/' + config.artistInfo() + '?')
+        api.getData(`/pages${config.language}/rijksstudio/kunstenaars/${config.artistInfo()}?`)
         .then(function (data) {
           // Renders the right data with a few parameters to show the right content
           template.render(data, '#home', template.home)
@@ -26,7 +26,7 @@ var router = {
         })
       },
       'art': function () {
-        api.getData(config.language + '/collection/?principalMaker=' + config.artistCollection() + '&ps=' + config.results + '&p=' + config.page + '&')
+        api.getData(`${config.language}/collection/?principalMaker=${config.artistCollection()}&ps=${config.results}&p=${config.page}&`)
         .then(function (data) {
           template.render(data, '#art', template.art)
         })
@@ -42,7 +42,7 @@ var router = {
         })
       },
       'detail/:id': function (id) {
-        api.getData(config.language + '/collection/' + id + '?')
+        api.getData(`${config.language}/collection/${id}?`)
         .then(function (data) {
           template.render(data, '#detail', template.detail)
         })
@@ -58,7 +58,7 @@ var router = {
       },
       'detail/image/:id': function (id) {
         sections.toggle('#image')
-        api.getData(config.language + '/collection/' + id + '?')
+        api.getData(`${config.language}/collection/${id}?`)
         .then(function (data) {
           template.render(data, '#image', template.image)
         })

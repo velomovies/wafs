@@ -8,14 +8,14 @@ import router from './modules/router.js'
 (function () {
   "use strict"
 
-  var app = {
+  const app = {
     init: function () {
       // Initialize the app and start router
       router.init()
       utils.showSettings()
     } 
   }
-  
+
   app.init()
 
-})()
+}) ()

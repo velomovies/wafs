@@ -2,14 +2,14 @@ import config from './config.js'
 import api from './api.js'
 import template from './template.js'
 
-var utils = {
+const utils = {
   // This is a function on one page. It gives an effect when you scroll on the page
   onScroll: function () {
-    var lastScrollTop = 0
-    var smallImages = document.querySelectorAll('.smallImage')
+    let lastScrollTop = 0
+    let smallImages = document.querySelectorAll('.smallImage')
 
     window.addEventListener("scroll", function () {
-      var st = window.pageYOffset || document.documentElement.scrollTop
+      let st = window.pageYOffset || document.documentElement.scrollTop
 
       if (st > lastScrollTop) {
         smallImages.forEach(function (image) {
@@ -40,7 +40,7 @@ var utils = {
     })
   },
   selectArtist: function () {
-    api.getData('/pages' + config.language + '/rijksstudio/kunstenaars/?')
+    api.getData(`/pages${config.language}/rijksstudio/kunstenaars/?`)
     .then(function (data) {
       // Renders the right data with a few parameters to show the right content
       template.render(data, '#selectArtist', template.selectArtist)
@@ -48,7 +48,7 @@ var utils = {
     .then(function () {
       document.querySelectorAll('.selectArtist li').forEach(function (element) {
         element.addEventListener('click', function () {
-          var artist = this.innerText,
+          let artist = this.innerText,
               namePlus = artist.replace(/ /g, '+'),
               nameLow = artist.toLowerCase(),
               nameMinus = nameLow.replace(/ /g, '-'),

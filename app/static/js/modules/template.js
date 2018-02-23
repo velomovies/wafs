@@ -1,4 +1,4 @@
-var template = {
+const template = {
   // Renders the template in the HTML page
   render: function (data, route, template) {
     // Gets the render and adds the parameters added in the call
@@ -12,7 +12,7 @@ var template = {
     }
   },
   art: function (data) {
-    var dataArt = data.artObjects
+    const dataArt = data.artObjects
     .filter(function (data) {
       return data.webImage !== null
     })
@@ -30,7 +30,7 @@ var template = {
       title: data.artObject.title,
       imageUrl: data.artObject.webImage.url,
       description: data.artObject.description,
-      id: 'image/' + data.artObjectPage.objectNumber
+      id: `image/${data.artObjectPage.objectNumber}`
     }
   },
   image: function (data) {
@@ -39,7 +39,7 @@ var template = {
     }
   },
   selectArtist: function (data) {
-    var artistNames = data.contentPage.highlights
+    const artistNames = data.contentPage.highlights
     .map(function (item) {
       return {
         artistName: item.page.title
@@ -49,7 +49,7 @@ var template = {
   },
   // This gets all images and or links and adds the right url to it. Only when it finds it on the page
   renderDirectives: function () {
-    var directives = {
+    const directives = {
       image: {
         src: function (params) {
           return this.imageUrl
@@ -57,7 +57,7 @@ var template = {
       },
       link: {
         href: function (params) {
-          return '#detail/' + this.id
+          return `#detail/${this.id}`
         }
       },
       info: {

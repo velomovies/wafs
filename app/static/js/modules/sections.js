@@ -1,11 +1,11 @@
 import config from './config.js'
 
-var sections = { 
+const sections = { 
   // Toggles the right section and adds active states
   toggle: function (route) {
-    var activeElements = document.querySelectorAll('.active'),
-        activeLinkElements = document.querySelectorAll('nav [href="' + route + '"]'),
-        sectionElements = document.querySelector(route)
+    let activeElements = document.querySelectorAll('.active'),
+          activeLinkElements = document.querySelectorAll('nav [href="' + route + '"]'),
+          sectionElements = document.querySelector(route)
     // Turns active links off and adds the right active state
     this.hideSection(activeElements)
     this.showSection(activeLinkElements, sectionElements) 
