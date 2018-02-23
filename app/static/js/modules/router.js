@@ -71,7 +71,7 @@ const router = {
       },
       // renders the error page
       'error': function () {
-        sections.toggle('#home')
+        sections.toggle('#error')
       },
       'refresh': function () {
         routie('home')
