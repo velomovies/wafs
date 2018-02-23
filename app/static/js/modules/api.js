@@ -6,7 +6,7 @@ const api = {
   getData: function (dataEndpoint) {
     utils.addLoader()
     // Uncomment if nothing has to be stored
-    localStorage.clear()
+    // localStorage.clear()
     return new Promise(function (resolve, reject) {
       // When the user has info in the localStorage it gets the data from the localStorage
       if (localStorage.getItem(dataEndpoint)) {
